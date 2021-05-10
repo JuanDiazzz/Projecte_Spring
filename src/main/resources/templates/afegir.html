@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir</title>
+    <link rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div>
+        <form
+                method="post"
+                action="#"
+                th:action="${empleatForm.id!=0}?@{/empleats/edit/submit}:@{/empleats/new/submit}"
+                th:object="${empleatForm}">
+            <!-- si el id == 0 new Empleat , si el id != 0 edit Empleat -->
+            <h1 th:text="${empleatForm.id!=0}?'Editar empleat': 'Nou empleat'">bla bla empleat</h1>
+            <div>
+                <label> Id </label>
+                <input contenteditable="${empleatForm.id!=0}"
+                       type="text"
+                       id="id"
+                       placeholder="1"
+                       th:field="*{id}"
+                       th:attrappend="readonly=${empleatForm.id!=0}?'readonly':null"
+                       class="form-control ">
+            </div>
+            <div>
+                <label> Nom </label>
+                <input type="text" id="nom" placeholder="Hermengildo" th:field="*{nom}" class="form-control">
+            </div>
+            <div>
+                <label for="email">Enter Email </label>
+                <input type="text" id="email" placeholder="hermenegildo@gmail.com" th:field="*{email}" class="form-control">
+            </div>
+            <div>
+                <label> Telèlfon </label>
+                <input type="text" id="telefon" placeholder="932345678" th:field="*{telefon}" class="form-control">
+            </div>
+            <div >
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

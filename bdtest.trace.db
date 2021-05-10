@@ -1,0 +1,3 @@
+2021-04-14 16:40:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARI" not found; SQL statement:
+select usuari0_.username as username1_1_0_, usuari0_.id as id2_1_0_, usuari0_.password as password3_1_0_, usuari0_.rol as rol4_1_0_ from usuari usuari0_ where usuari0_.username=? [42102-200]

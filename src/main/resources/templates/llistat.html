@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ca" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Llistat Empleats</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Telèfon</th>
+        <th>Es directiu</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+
+    </tr></br>
+    </thead>
+    <tbody>
+    <tr th:each="emp : ${llistaEmpleats}">
+        <td th:text="${emp.id}">ID</td>
+        <td th:text="${emp.nom}">Hermenegildo García</td>
+        <td th:text="${emp.email}">herme.gar@gmail.com</td>
+        <td th:text="${emp.telefon}">987654376</td>
+        <td th:text="${emp.esDirectiu}">true</td>
+        <td><a th:href="@{/empleats/edit/{id}(id=${emp.id})}">Editar</a> </td>
+        <td><a th:href="@{/empleats/eliminar(id=${emp.id})}">Eliminar</a> </td>
+        <br/>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
