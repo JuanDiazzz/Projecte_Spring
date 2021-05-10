@@ -13,9 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>projecte_m3_uf6</name>
     <description>projecte m3 uf6</description>
-    <properties>
-        <java.version>11</java.version>
-    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
